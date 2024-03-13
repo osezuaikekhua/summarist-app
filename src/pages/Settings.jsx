@@ -10,7 +10,8 @@ function Settings() {
     const { accountInformation } = useContext(Context)
     const { loginState } = useContext(Context)
     const { showModule } = useContext(Context)
-    
+    const { subscriptionStatus } = useContext(Context)
+
   return (
 
     <div className='Settings__Container'>
@@ -20,7 +21,7 @@ function Settings() {
             <div className='Account__Information'>
                 <div className='Subscription__Plan'>
                     <h3>You Subscription Plan</h3>
-                    <h4>Basic</h4>
+                    <h4>{subscriptionStatus}</h4>
                     <Link to={"/choose-plan"}><button>Upgrade to Premium</button></Link>
                     
                 </div>

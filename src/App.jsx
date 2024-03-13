@@ -18,6 +18,7 @@ import ChoosePlan from './pages/ChoosePlan';
 import logo from './images/logo.png'
 
 
+import {Helmet} from "react-helmet";
 
 
 export const Context = createContext();
@@ -30,6 +31,7 @@ function App() {
   const[loginState, setLoginState] = useState(false)
   const[accountInformation, setAccountInformation] = useState(" ")
   const[showModal, setShowModal] = useState(false)
+  const[subscriptionStatus, setSubscriptionStatus] = useState("Basic")
 
   const [ textSize, setTextSize ] = useState('16px')
   const [ lineHeight, setLineHeight ] = useState('23px')
@@ -47,11 +49,14 @@ function App() {
               
   return (
     <>
-      <Context.Provider value={{setShowModal, showModule, setAccountInformation, accountInformation, loginState, setLoginState, textSize, setTextSize, lineHeight, setLineHeight}}>
+      <Context.Provider value={{setShowModal, showModule, setAccountInformation, accountInformation, loginState, setLoginState, textSize, setTextSize, lineHeight, setLineHeight, subscriptionStatus, setSubscriptionStatus}}>
 
         { showModal && <Modual /> } 
 
-        
+        <Helmet>
+            <title>Summarist</title>
+            <meta name="description" content="Helmet application" />
+        </Helmet>
 
         <Routes>
           <Route index element={ <Home showModule={showModule} /> }/> 
