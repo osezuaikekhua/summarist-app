@@ -56,8 +56,13 @@ function LogIn({showSignIn, resetPass}) {
             <h2>Log in to Summarist</h2>
             <h4 style={{color: '#c71111', fontWeight:'400'}}>{error}</h4>
             <br />
-           <button className='module__login__guest'> <Link to={"/for-you"}> <div className='guest-icon'><GiCharacter /></div> Login as a Guest</Link></button>            
-            <button className='module__login__google'> <div className='google-icon'><FcGoogle /></div> Login with Google</button>
+            <button className='module__login__guest'> <Link to={"/for-you"}> <div className='guest-icon'><GiCharacter /></div> Login as a Guest</Link></button>            
+            {/*<button className='module__login__google'> <div className='google-icon'><FcGoogle /></div> Login with Google</button>*/}
+              <div id='or'>
+                <div></div>
+                <h5>or</h5>
+                <div></div>
+              </div>
             <form onSubmit={(e)=>handleSubmit(e)}>
               <input type="text" placeholder='Email Address' name='email' />
               <input type="text" placeholder='Password' name='password'/>

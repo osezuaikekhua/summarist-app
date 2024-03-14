@@ -51,7 +51,7 @@ function SignIn({showLogIn}) {
             <h2>Sign up to Summarist</h2>
             <h4 style={{color: '#c71111', fontWeight:'400'}}>{error}</h4>
             <br />
-            <button className='module__login__google'> <div className='google-icon'><FcGoogle /></div> Sign up with Google</button>
+            {/*<button className='module__login__google'> <div className='google-icon'><FcGoogle /></div> Sign up with Google</button>*/}
             
             <form onSubmit={(e)=>handleSubmit(e)}>
               <input type="text" placeholder='Email Address' name='email' />

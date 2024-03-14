@@ -14,6 +14,7 @@ import Settings from './pages/Settings';
 import Modual from './componets/Modules/Modual';
 import BookSummary from './pages/BookSummary';
 import ChoosePlan from './pages/ChoosePlan';
+import Purchase from './pages/Purchase';
 
 import logo from './images/logo.png'
 
@@ -27,7 +28,7 @@ export const Context = createContext();
 function App() {
 
 
-  
+  //Global Variables
   const[loginState, setLoginState] = useState(false)
   const[accountInformation, setAccountInformation] = useState(" ")
   const[showModal, setShowModal] = useState(false)
@@ -61,6 +62,7 @@ function App() {
         <Routes>
           <Route index element={ <Home showModule={showModule} /> }/> 
           <Route path='/choose-plan' element={ <ChoosePlan/> } />
+          <Route path='/purchase' element={ <Purchase/> } />
         </Routes>
 
 

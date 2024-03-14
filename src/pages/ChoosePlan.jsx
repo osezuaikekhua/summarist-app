@@ -1,30 +1,60 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+
 import Footer from '../componets/home/Footer'
+import pricing from "../images/pricing-top.png"
+
 import { GiNotebook } from "react-icons/gi";
 import { RiPlantFill } from "react-icons/ri";
 import { FaHandshake } from "react-icons/fa";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
-import pricing from "../images/pricing-top.png"
-
 
 
 
 function ChoosePlan() {
 
   const [selected, setSelected] = useState(null)
+  const [premiumBtn, setPremiumBtn] = useState("Start your free 7-day trial")
+  const [premiumBtnDescription, setPremiumBtnDescription] = useState("Cancel your trial at any time before it ends, and you won’t be charged.")
+
+  const location = useNavigate()
 
   const toggle = (i) => {
     if (selected == i){
       return setSelected(null)
     }
-
     setSelected(i)
   }
 
 
-  const upgradeToPremium = async () => {
-    console.log("upgrade to premium")
+  function PaymentOption () {
+    const option = document.querySelectorAll(".Plan__Container__Payment--option")
+    
+    option.forEach( tab =>{
+      tab.addEventListener('click', () => {
+        document.querySelector('.payment--active')?.classList.remove('payment--active')
+        tab.classList.add('payment--active')
+
+        if(tab.id === "MTM"){
+          setPremiumBtn("Start your first month")
+          setPremiumBtnDescription("30-day money back guarantee, no questions asked.")
+        }else{
+          setPremiumBtn("Start your free 7-day trial")
+          setPremiumBtnDescription("Cancel your trial at any time before it ends, and you won’t be charged.")
+        }
+      })
+    })
   }
+
+  const navigateToPurchase = () => {
+    location('/purchase')
+  }
+
+
+
+  useEffect(() => {
+    PaymentOption ()
+  })
   
   return (
     <>
@@ -61,9 +91,40 @@ function ChoosePlan() {
               </div>
           </section>
 
-          <section>
-            <div className='btn' onClick={upgradeToPremium}> Buy Premium </div>
+          <section className='Plan__Container__Payment'>
+            <section>
+
+              <h1>Choose the plan that fits you</h1>
+
+              <div className='Plan__Container__Payment--option payment--active' id='Yearly' >
+                <h3>Premium Plus Yearly</h3>
+                <h2>$99.99/year</h2>
+                <h4>7-day free trial included</h4>
+              </div>
+
+              <div id='or'>
+                <div></div>
+                <h5>or</h5>
+                <div></div>
+              </div>
+
+              <div className='Plan__Container__Payment--option' id='MTM' >
+                <h3>Premium Monthly</h3>
+                <h2>$9.99/month</h2>
+                <h4>No trial included</h4>
+              </div>
+            </section>
+
           </section>
+
+          <div className='Plan__Container__Payment--button'>
+            <div className="row">
+              <div className='Plan__Container__Payment--button__container'>
+                  <button onClick={navigateToPurchase}> {premiumBtn} </button>
+                <h5> {premiumBtnDescription} </h5>
+              </div>
+            </div>
+          </div>
 
           <section className='Plan__Container__Questions'>
             {
