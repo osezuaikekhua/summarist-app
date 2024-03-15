@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 import Footer from '../componets/home/Footer'
@@ -9,6 +9,8 @@ import { RiPlantFill } from "react-icons/ri";
 import { FaHandshake } from "react-icons/fa";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 
+import { Context } from '../App';
+
 
 
 function ChoosePlan() {
@@ -16,6 +18,8 @@ function ChoosePlan() {
   const [selected, setSelected] = useState(null)
   const [premiumBtn, setPremiumBtn] = useState("Start your free 7-day trial")
   const [premiumBtnDescription, setPremiumBtnDescription] = useState("Cancel your trial at any time before it ends, and you won’t be charged.")
+
+  const { setSubscriptionType } = useContext(Context)
 
   const location = useNavigate()
 
@@ -38,9 +42,11 @@ function ChoosePlan() {
         if(tab.id === "MTM"){
           setPremiumBtn("Start your first month")
           setPremiumBtnDescription("30-day money back guarantee, no questions asked.")
+          setSubscriptionType("MTM")
         }else{
           setPremiumBtn("Start your free 7-day trial")
           setPremiumBtnDescription("Cancel your trial at any time before it ends, and you won’t be charged.")
+          setSubscriptionType("Yearly")
         }
       })
     })
@@ -54,6 +60,7 @@ function ChoosePlan() {
 
   useEffect(() => {
     PaymentOption ()
+    setSubscriptionType("Yearly")
   })
   
   return (

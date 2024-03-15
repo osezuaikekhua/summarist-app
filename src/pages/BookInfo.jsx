@@ -22,6 +22,8 @@ function BookInfo() {
 
     const { loginState } = useContext(Context)
     const { showModule } = useContext(Context)
+    const { subscriptionStatus } = useContext(Context)
+    
 
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
@@ -69,20 +71,52 @@ function BookInfo() {
                     </div>
                 </div>
                 {loginState ?
-                    <div className='Book__Info-read'>
-                        <Link to={`/player/${book.id}`}>
-                            <button>
-                                <SlBookOpen/>
-                                <div>Read</div>
-                            </button>
-                        </Link>
-                        <Link to={`/player/${book.id}`}>
-                            <button>
-                                <HiOutlineMicrophone/>
-                                <div>Listen</div>
-                            </button>
-                        </Link>
-                    </div>
+                    book.subscriptionRequired ?
+                        subscriptionStatus==="Premium" ?
+                            <div className='Book__Info-read'>
+                                <Link to={`/player/${book.id}`}>
+                                    <button>
+                                        <SlBookOpen/>
+                                        <div>Read</div>
+                                    </button>
+                                </Link>
+                                <Link to={`/player/${book.id}`}>
+                                    <button>
+                                        <HiOutlineMicrophone/>
+                                        <div>Listen</div>
+                                    </button>
+                                </Link>
+                            </div>
+                            :
+                            <div className='Book__Info-read'>
+                                <Link to={'/choose-plan'}>
+                                    <button>
+                                        <SlBookOpen/>
+                                        <div>Read</div>
+                                    </button>
+                                </Link>
+                                <Link to={'/choose-plan'}>
+                                    <button>
+                                        <HiOutlineMicrophone/>
+                                        <div>Listen</div>
+                                    </button>
+                                </Link>
+                            </div>
+                        :
+                        <div className='Book__Info-read'>
+                            <Link to={`/player/${book.id}`}>
+                                <button>
+                                    <SlBookOpen/>
+                                    <div>Read</div>
+                                </button>
+                            </Link>
+                            <Link to={`/player/${book.id}`}>
+                                <button>
+                                    <HiOutlineMicrophone/>
+                                    <div>Listen</div>
+                                </button>
+                            </Link>
+                        </div>
                     :
                     <div className='Book__Info-read'>
                         <button onClick={showModule}>

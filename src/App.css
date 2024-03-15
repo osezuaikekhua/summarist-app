@@ -1569,6 +1569,210 @@ overflow: hidden;
 }
 
 
+/* Purchase Page */
+
+.Purchase__Page{
+  background-image: linear-gradient(to right, #052e4504 0%, #052e4504 50%, white 50%, white 100%);
+}
+
+.Purchase__Page__section-1{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+/* Left Side */
+
+.Purchase__Page__LeftSide{
+  width: 50%;
+  height: 100%;
+  padding: 70px 70px 70px 0;
+}
+
+.Purchase__Page__Exit{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.Purchase__Page__Exit i{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  color: rgba(69, 69, 69, 0.445);
+}
+
+.Purchase__Page__Exit h2{
+ font-size: 15px;
+ margin-left: 5px;
+ color: rgba(69, 69, 69, 0.751);
+ font-weight: 500;
+}
+
+.Purchase__Page__Exit span{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px 0 rgba(111, 111, 111, 0.2), 0 3px 10px 0 rgba(131, 131, 131, 0.19);
+  color: rgba(69, 69, 69, 0.751);
+}
+
+
+.Purchase__Page__Premium{
+  margin-left: 30px;
+}
+
+.Purchase__Page__Premium h1{
+  color: rgba(69, 69, 69, 0.751);
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.Purchase__Page__Premium h2{
+  font-size: 40px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.Purchase__Page__Premium h4{
+  color: rgba(69, 69, 69, 0.445);
+  font-size: 15px;
+}
+
+
+/* Right Side */
+
+.Purchase__Page__Border{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Purchase__Page__CardInfo{
+  width: 50%;
+  padding: 70px;
+  box-shadow: -5px 0px 9px 0px #e5e5e5;
+}
+
+.Purchase__Page__CardInfo section{
+  margin-bottom: 40px;
+}
+
+.Purchase__Page__CardInfo h1{
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.Purchase__Page__Email{
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #8b8c8c21;
+  background-color: #052e450a;
+  padding: 10px 40px 10px 10px;
+  border-radius: 5px;
+}
+
+.Purchase__Page__Email h2{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.Purchase__Page__CardInfo input{
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 10px 0 rgba(111, 111, 111, 0.2), 0 3px 10px 0 rgba(131, 131, 131, 0.19);
+}
+
+.Purchase__Page__CardInfo input::placeholder{
+  color: #8080807a;
+}
+
+.card__information input{
+  width: 50%;
+}
+
+#Purchase__Page--Or{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #052e4559;
+  margin: 25px 0;
+}
+#Purchase__Page--Or h5{
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+#Purchase__Page--Or div{
+  width: 25%;
+  height: 2px;
+  border-bottom: 2px solid #052e451a;
+  margin: 15px;
+}
+
+.Purchase__Page__Other{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Purchase__Page__Other div{
+  display: flex;
+  width: 49%;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 0;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+.Purchase__Page__Other h2{
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.Purchase__Page__Google{
+  background-color: black;
+  color: white;
+}
+
+.Purchase__Page__Google i{
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.Purchase__Page__Link{
+  background-color: #2bd97cba;
+}
+
+.Purchase__Page__Link span{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+
+
+
+.Purchase__Page__Footer{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Purchase__Page__Footer h2{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.Purchase__Page__Footer span{
+  color: red;
+  font-weight: 400;
+}
 
 
 /* =========================

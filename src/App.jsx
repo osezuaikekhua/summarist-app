@@ -33,6 +33,7 @@ function App() {
   const[accountInformation, setAccountInformation] = useState(" ")
   const[showModal, setShowModal] = useState(false)
   const[subscriptionStatus, setSubscriptionStatus] = useState("Basic")
+  const[subscriptionType, setSubscriptionType] = useState("Yearly")
 
   const [ textSize, setTextSize ] = useState('16px')
   const [ lineHeight, setLineHeight ] = useState('23px')
@@ -50,7 +51,7 @@ function App() {
               
   return (
     <>
-      <Context.Provider value={{setShowModal, showModule, setAccountInformation, accountInformation, loginState, setLoginState, textSize, setTextSize, lineHeight, setLineHeight, subscriptionStatus, setSubscriptionStatus}}>
+      <Context.Provider value={{setShowModal, showModule, setAccountInformation, accountInformation, loginState, setLoginState, textSize, setTextSize, lineHeight, setLineHeight, subscriptionStatus, setSubscriptionStatus, subscriptionType, setSubscriptionType}}>
 
         { showModal && <Modual /> } 
 
