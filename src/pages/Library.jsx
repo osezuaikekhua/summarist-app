@@ -23,25 +23,25 @@ function Library() {
   return (
     <>
       <div className="Library__Container">
-        <section className="Books__Section">
-              <h2>Saved Books</h2>
-              <p>0 items</p>
+        <div className="row">
+          <section className="Books__Section">
+                <h2>Saved Books</h2>
+                <p>0 items</p>
 
-              <div className="Books__Section__Container">
-                
-              </div>
-        </section>
+                <div className="Books__Section__Container">
+                  
+                </div>
+          </section>
 
-        <section className="Books__Section">
-              <h2>Finished</h2>
-              <p>0 item</p>
+          <section className="Books__Section">
+                <h2>Finished</h2>
+                <p>0 item</p>
 
-              <div className="Books__Section__Container">
-                
-              </div>
-        </section>
-
-
+                <div className="Books__Section__Container">
+                  
+                </div>
+          </section>
+        </div>
       </div>
 
       

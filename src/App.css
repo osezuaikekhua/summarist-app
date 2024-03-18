@@ -854,7 +854,7 @@ button:disabled {
 
 .ForYou__Container{
   width: 100%;
-  padding: 50px 20%;
+  padding: 50px 0;
   color: #052e45;
 }
 
@@ -911,7 +911,7 @@ button:disabled {
 
 .Library__Container{
   width: 100%;
-  padding: 50px 20%;
+  padding: 50px 0;
   color: #052e45;
 }
 
@@ -1002,7 +1002,15 @@ overflow: hidden;
 
 .Book__Info__Page{
   width: 100%;
-  padding: 50px 20%;
+  padding: 50px 0;
+  display: flex;
+}
+
+.Book__Info__Page--row{
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
 }
 
@@ -1131,7 +1139,7 @@ overflow: hidden;
 /* Setting Section */
 
 .Settings__Container{
-  padding: 50px 20%;
+  padding: 50px 0;
   color: #052e45;
   width: 100%;
 }
@@ -1183,8 +1191,15 @@ overflow: hidden;
 
 .Book__Summary__Page{
   position: relative;
-  padding: 50px 25%;
+  padding: 50px 0;
   color: #052e45;
+}
+
+.Purchase__Page--row{
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .Book__Summary__Page h1{

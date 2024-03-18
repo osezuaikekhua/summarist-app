@@ -21,8 +21,10 @@ function BookSummary({textSize, lineHeight}) {
   return (
     <>
         <div className='Book__Summary__Page'>
-            <h1 className='Book__Info-title'>{bookSummary.title}</h1>
-            <h3 style={{fontSize : textSize, lineHeight: lineHeight}} >{bookSummary.summary}</h3>    
+            <div className="Purchase__Page--row">
+                <h1 className='Book__Info-title'>{bookSummary.title}</h1>
+                <h3 style={{fontSize : textSize, lineHeight: lineHeight}} >{bookSummary.summary}</h3>    
+            </div>
         </div>
         
         <AudioPlayer {...{bookSummary}}/>
