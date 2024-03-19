@@ -2,7 +2,7 @@
 
 This is an E-Book website. 
 
-##Functionalities:
+## ⚙️Functionalities:
 
 <ul>
   <li>User authentication</li>
