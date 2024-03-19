@@ -9,17 +9,12 @@ This is an E-Book website.
   <li>-Read or listen to E-Books</li>
   <li>-Purchase Premium to gain access to more books</li>
   <li>-Search for books</li>
-  <li></li>
-  <li></li>
-  
+  <li>-Save your Favorite books</li>
+  <li>-Responsive website</li>
+  <li>And other small little details....</li>
 </ul>
   
   
-  
- 
-  -Save your Favorite books
-  -Responsive website
-  -And other small little details....
 
 Technologies Used:
   -React JS
