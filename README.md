@@ -29,9 +29,3 @@ The original file was corruptted so in order to see past commits up to
 the oldest commit in this repository, 
 <br>
 go here 👉 (https://github.com/osezuaikekhua/advanced-internship/commits/master/)
-
-  
-cd summarist-app
-npm start
-
-
