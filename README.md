@@ -16,9 +16,10 @@ Technologies Used:
   -FireBase (firestore + authentication)
   -React Icons
 
-                                          *Note*
+  *Note*
 The original file was corruptted so in order to see past commits up to
-the oldest commit in this repository, go here 👉 ( https://github.com/osezuaikekhua/advanced-internship/commits/master/ )
+the oldest commit in this repository, go here 👉 
+( https://github.com/osezuaikekhua/advanced-internship/commits/master/ )
   
 cd summarist-app
 npm start
