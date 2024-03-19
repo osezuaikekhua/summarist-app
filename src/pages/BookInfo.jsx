@@ -59,7 +59,7 @@ function BookInfo() {
             setSavedStatus("Add title to My Library")
             setIsSaved(false)
             
-            savedBooks.remove(element)
+            savedBooks.pop(element)
         }
 
         

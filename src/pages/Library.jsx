@@ -41,9 +41,9 @@ function Library() {
                               author={book.author} 
                               subTitle={book.subTitle} 
                               averageRating = {book.averageRating}
-                              removeBook = {"delete"}
                         />
                       </Link>
+                      
                     ))
                   }
                   

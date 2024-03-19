@@ -48,8 +48,9 @@ function LogIn({showSignIn, resetPass}) {
 
       setError(`Error: ${err.code}`)
       setTimeout(() => {  
-        setError(" Error! ")
-      }, 4000);
+
+        setError(" ")
+      }, 2000);
       
     })
   }
