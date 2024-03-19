@@ -1,6 +1,7 @@
 # Welcome to Summarist App!
 
-This is an E-Book website. I created this website for the Frontend Simplified internship.
+Summarist is an E-Book website. You can read a variety of books or listen to the e-books. 
+I created this website for the Frontend Simplified internship. 
 
 ## ⚙️Functionalities:
 
@@ -9,9 +10,9 @@ This is an E-Book website. I created this website for the Frontend Simplified in
  - Read or listen to E-Books
  - Purchase Premium to gain access to more books
  - Search for books
- -  Save your Favorite books
- -  Responsive website
- -  And other small little details....
+ - Save your Favorite books
+ - Responsive website
+ - And other small little details....
   
   
   
