@@ -924,7 +924,18 @@ button:disabled {
 
 .Books__Section__Container{
   display: flex;
-overflow: hidden;
+  overflow: hidden;  
+}
+
+.Books__Section__Container--noContent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Books__Section__Container--noContenth4{
+  font-weight: 100;
 }
 
 .Books__Section h2{

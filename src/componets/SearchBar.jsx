@@ -42,7 +42,6 @@ function SearchBar() {
     GetData(value)
     setFilterData(value)
     OpenSearchResult()
-    console.log(filterData)
   }
 
   //debounce funciton

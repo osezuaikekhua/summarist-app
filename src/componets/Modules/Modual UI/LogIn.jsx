@@ -31,7 +31,14 @@ function LogIn({showSignIn, resetPass}) {
     const password = e.target.password.value
     
     signInWithEmailAndPassword(database,email,password).then(data => { 
-      history('/for-you')
+
+      if(window.location.pathname === '/'){
+        history('/for-you')
+      }else{
+        history(window.location.pathname)
+      }
+
+      
       setShowModal(false)
       setAccountInformation(email)
       setLoginState(true)

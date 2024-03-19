@@ -23,6 +23,7 @@ function BookInfo() {
     const { loginState } = useContext(Context)
     const { showModule } = useContext(Context)
     const { subscriptionStatus } = useContext(Context)
+    const { savedBooks } = useContext(Context)
     
 
     async function fetchBook(){
@@ -32,7 +33,6 @@ function BookInfo() {
 
     useEffect(() => {
         fetchBook()
-        console.log(book)
     }, [])
 
 
@@ -41,10 +41,31 @@ function BookInfo() {
         if(!isSaved){
             setSavedStatus("Saved in My Library")
             setIsSaved(true)
+
+            var element = {};
+            element={
+                id: book.id,
+                title: book.title, 
+                author: book.author, 
+                description: book.subTitle, 
+                imageLink: book.imageLink,
+                averageRating: book.averageRating,
+                subscriptionRequired: book.subscriptionRequired
+                }
+
+            savedBooks.push(element);
+
         }else if(isSaved){
             setSavedStatus("Add title to My Library")
             setIsSaved(false)
+            
+            savedBooks.remove(element)
         }
+
+        
+        
+
+
     }
 
 

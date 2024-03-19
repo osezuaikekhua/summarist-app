@@ -6,7 +6,6 @@ import Book from '../componets/Book';
 import Skeleton from '../componets/Skeleton';
 
 
-
 function ForYouPage( ) {
 
 
@@ -38,18 +37,20 @@ function ForYouPage( ) {
               
               {selectedBooks.length ?
                 selectedBooks.map(book => (
-                  <div className='Selected__Book__Section' key={book.id} >
-                    <p>{book.subTitle}</p>
-                    <div className='line'></div>
-                    <div className='Selected__Book__area'>
-                        <img className='Selected__Book' src={book.imageLink} alt="" />
-                        <div className="Selected__Book__Info">
-                            <h1>{book.title}</h1>
-                            <h2>{book.author}</h2>
-                            <div><IoMdPlayCircle /> <h3>3mins 23secs</h3> </div>
-                        </div>
+                  <Link to={`/book/${book.id}`}>
+                    <div className='Selected__Book__Section' key={book.id} >
+                      <p>{book.subTitle}</p>
+                      <div className='line'></div>
+                      <div className='Selected__Book__area'>
+                          <img className='Selected__Book' src={book.imageLink} alt="" />
+                          <div className="Selected__Book__Info">
+                              <h1>{book.title}</h1>
+                              <h2>{book.author}</h2>
+                              <div><IoMdPlayCircle /> <h3>3mins 23secs</h3> </div>
+                          </div>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 )) 
                 :
                   <Skeleton width = {"100%"} maxWidth = {"700px"} height = {"175px"} marginBottom = {"15px"}/>

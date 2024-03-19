@@ -24,7 +24,6 @@ function SignIn({showLogIn}) {
     const password = e.target.password.value
    
     createUserWithEmailAndPassword(database,email,password).then(data => {
-
       console.log(data,"authData")
       history('/for-you')
 
