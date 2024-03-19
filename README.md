@@ -4,6 +4,7 @@ This is an E-Book website.
 
 Functionalities:
   -User authentication
+  <br />
   -Read or listen to E-Books
   -Purchase Premium to gain access to more books
   -Search for books
