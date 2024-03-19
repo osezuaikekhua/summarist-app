@@ -2,12 +2,21 @@
 
 This is an E-Book website. 
 
-<h3>Functionalities:</h3>
+<h3>⚙️Functionalities:</h3>
 
-  -User authentication
-  -Read or listen to E-Books
-  -Purchase Premium to gain access to more books
-  -Search for books
+<ul>
+  <li>-User authentication</li>
+  <li>-Read or listen to E-Books</li>
+  <li>-Purchase Premium to gain access to more books</li>
+  <li>-Search for books</li>
+  <li></li>
+  <li></li>
+  
+</ul>
+  
+  
+  
+ 
   -Save your Favorite books
   -Responsive website
   -And other small little details....
