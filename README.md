@@ -2,7 +2,8 @@
 
 This is an E-Book website. 
 
-Functionalities:
+<h1>Functionalities: </h1>
+
 <br />
   -User authentication
 <br />
