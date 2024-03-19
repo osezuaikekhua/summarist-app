@@ -1,6 +1,6 @@
 # Welcome to Summarist App!
 
-This is an E-Book website. 
+This is an E-Book website. I created this website for the Frontend Simplified internship.
 
 ## ⚙️Functionalities:
 
@@ -16,10 +16,12 @@ This is an E-Book website.
   
   
 
-## Technologies Used:
-1. React JS
+## 🌐Technologies Used:
+1. React JS ⚛
 2. FireBase (firestore + authentication)
-3. React Icons
+3. Html </>
+4. Css
+5. React Icons
 
   <h3><b>Note</b></h3>
 The original file was corruptted so in order to see past commits up to
