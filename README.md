@@ -22,9 +22,9 @@ This is an E-Book website.
   
 
 Technologies Used:
-  -React JS
-  -FireBase (firestore + authentication)
-  -React Icons
+1. React JS
+2. FireBase (firestore + authentication)
+3. React Icons
 
   *Note*
 The original file was corruptted so in order to see past commits up to
