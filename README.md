@@ -25,6 +25,10 @@ Technologies Used:
 The original file was corruptted so in order to see past commits up to
 the oldest commit in this repository, go here 👉 
 ( https://github.com/osezuaikekhua/advanced-internship/commits/master/ )
+
+- item1
+- item2
+- item3
   
 cd summarist-app
 npm start
