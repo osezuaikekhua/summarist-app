@@ -2,11 +2,9 @@
 
 This is an E-Book website. 
 
-<h1>Functionalities: </h1>
+<h3>Functionalities:</h3>
 
-<br />
   -User authentication
-<br />
   -Read or listen to E-Books
   -Purchase Premium to gain access to more books
   -Search for books
