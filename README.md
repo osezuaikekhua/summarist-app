@@ -14,19 +14,14 @@ This is an E-Book website.
  -  And other small little details....
   
   
- 
-  
   
 
-  
-  
-
-Technologies Used:
+## Technologies Used:
 1. React JS
 2. FireBase (firestore + authentication)
 3. React Icons
 
-  *Note*
+  <h3><b>*Note*</b></h3>
 The original file was corruptted so in order to see past commits up to
 the oldest commit in this repository, go here 👉 
 ( https://github.com/osezuaikekhua/advanced-internship/commits/master/ )
