@@ -4,15 +4,20 @@ This is an E-Book website.
 
 ## ⚙️Functionalities:
 
-<ul>
-  <li>User authentication</li>
-  <li>Read or listen to E-Books</li>
-  <li>Purchase Premium to gain access to more books</li>
-  <li>Search for books</li>
-  <li>Save your Favorite books</li>
-  <li>Responsive website</li>
-  <li>And other small little details....</li>
-</ul>
+
+ - User authentication
+ - Read or listen to E-Books
+ - Purchase Premium to gain access to more books
+ - Search for books
+ -  Save your Favorite books
+ -  Responsive website
+ -  And other small little details....
+  
+  
+ 
+  
+  
+
   
   
 
