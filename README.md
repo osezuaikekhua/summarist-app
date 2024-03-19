@@ -23,7 +23,9 @@ This is an E-Book website.
 
   <h3><b>Note</b></h3>
 The original file was corruptted so in order to see past commits up to
-the oldest commit in this repository, go here 👉 [title](https://github.com/osezuaikekhua/advanced-internship/commits/master/)
+the oldest commit in this repository, 
+<br>
+go here 👉 [title](https://github.com/osezuaikekhua/advanced-internship/commits/master/)
 
   
 cd summarist-app
