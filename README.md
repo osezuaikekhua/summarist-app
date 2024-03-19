@@ -17,9 +17,9 @@ This is an E-Book website. I created this website for the Frontend Simplified in
   
 
 ## 🌐Technologies Used:
-1. React JS ⚛
+1. React JS 
 2. FireBase (firestore + authentication)
-3. Html </>
+3. Html 
 4. Css
 5. React Icons
 
@@ -27,7 +27,7 @@ This is an E-Book website. I created this website for the Frontend Simplified in
 The original file was corruptted so in order to see past commits up to
 the oldest commit in this repository, 
 <br>
-go here 👉 [title](https://github.com/osezuaikekhua/advanced-internship/commits/master/)
+go here 👉 (https://github.com/osezuaikekhua/advanced-internship/commits/master/)
 
   
 cd summarist-app
