@@ -89,9 +89,6 @@ function ForYouPage( ) {
                 
                 
                   }
-                  
-                  
-
               </div>
           </section>
 

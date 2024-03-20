@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
+import { HiOutlineBars3 } from "react-icons/hi2";
 import SearchResults from './SearchResults';
 import axios from 'axios';
 import debounce from 'lodash.debounce';
@@ -12,7 +13,7 @@ function SearchBar() {
   const [Data, setData] = useState([])
   const [filterData, setFilterData] = useState("")
   const [openSearch, setOpenSearch] = useState(false)
-
+  const [openNav, setOpenNav] = useState(false)
 
   //Api request
   const GetData = (value) => {
@@ -48,6 +49,10 @@ function SearchBar() {
   const updateQuery = e => handleFilter(e.target.value)
   const debounceOnChnage = debounce(updateQuery, 500)
   
+  //Opening navigation
+  const openNavigation = () => {
+    document.getElementById("nav__container").style.display = "flex"
+  }
 
 
   return (
@@ -57,7 +62,7 @@ function SearchBar() {
         <input className='search' type="text" placeholder='Search for books' onChange={debounceOnChnage}/>
         { openSearch ? <button onClick={CloseSearchResult}><TfiClose /> </button> : <button> <RxMagnifyingGlass /> </button> }       
       </div>
-      
+      <i onClick={openNavigation}> <HiOutlineBars3/> </i>
       { openSearch && <SearchResults data = {Data} />}
     </div>
   )

@@ -666,6 +666,8 @@ button:disabled {
 
 /* FOR YOU PAGE */
 
+/*navigation*/
+
 .Container{
   display: flex;
 }
@@ -677,7 +679,7 @@ button:disabled {
 
   height: 100vh;
   width: 250px;
-  background-color:  #052e450c;;
+  background-color:  #052e450c;
   color: #021b28;
 
   display: flex;
@@ -805,6 +807,11 @@ button:disabled {
   font-size: 20px;
 }
 
+.search__container i{
+  font-size: 30px;
+  display: none;
+}
+
 .Search__Results{
   position: absolute;
   top: 100px;
@@ -860,8 +867,7 @@ button:disabled {
 
 .Selected__Book__Section{
   background-color: #ffecd498;
-  max-width: 700px;
-  width: 100%;
+  width: 700px;
   display: flex;
   justify-content: space-between;
   padding: 30px;
@@ -881,7 +887,7 @@ button:disabled {
 .Selected__Book__area{
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
+  width: 60%;
 }
 
 .Selected__Book{
@@ -1887,3 +1893,42 @@ input[type="range"]:active::-moz-range-thumb {
     display: none;
   }
 }
+
+
+/* Navigation */
+
+@media (max-width: 1166px) {
+  #nav{ 
+    width: 85%;
+    height: 100%;
+  }
+  .nav__background{
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.47);
+  }
+  .Selected__Book__Section{
+    width: 100%;
+  }
+  .search__container i{
+    display: block;
+  }
+  .nav__logo img{
+    width: 150px;
+  }
+  .nav__logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #nav__container{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, white 0%, white 85%, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 0) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
+

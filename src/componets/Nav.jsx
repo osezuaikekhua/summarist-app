@@ -63,11 +63,14 @@ function Nav({logo}) {
       setTextSize('30px')
       setLineHeight('38px')
   }
-
   
+  const closeNav = () => {
+    document.getElementById("nav__container").style.display = "none"
+  }
 
   return (
-    <nav>
+    <div id='nav__container'>
+    <nav id='nav'>
       <div className='nav__logo'><img src={logo} alt="" /></div>
       <div className='nav__section'>
         <div className='nav__section__text'>
@@ -116,6 +119,10 @@ function Nav({logo}) {
         </div>
       </div>
     </nav>
+    <div className='nav__background' onClick={closeNav}>
+
+    </div>
+    </div>
   )
 }
 
