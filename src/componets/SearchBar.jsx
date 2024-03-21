@@ -57,12 +57,12 @@ function SearchBar() {
 
   return (
     <div className='search__container'>
-      <div></div>
+      <div className='blank'></div>
       <div className='search__bar'>
         <input className='search' type="text" placeholder='Search for books' onChange={debounceOnChnage}/>
         { openSearch ? <button onClick={CloseSearchResult}><TfiClose /> </button> : <button> <RxMagnifyingGlass /> </button> }       
       </div>
-      <i onClick={openNavigation}> <HiOutlineBars3/> </i>
+      <i onClick={openNavigation} style={{cursor: "pointer", marginLeft: "15px"}}> <HiOutlineBars3/> </i>
       { openSearch && <SearchResults data = {Data} />}
     </div>
   )

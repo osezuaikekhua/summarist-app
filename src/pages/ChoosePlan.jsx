@@ -8,6 +8,7 @@ import { GiNotebook } from "react-icons/gi";
 import { RiPlantFill } from "react-icons/ri";
 import { FaHandshake } from "react-icons/fa";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
+import { PiCircleNotchBold } from "react-icons/pi";
 
 import { Context } from '../App';
 
@@ -18,6 +19,7 @@ function ChoosePlan() {
   const [selected, setSelected] = useState(null)
   const [premiumBtn, setPremiumBtn] = useState("Start your free 7-day trial")
   const [premiumBtnDescription, setPremiumBtnDescription] = useState("Cancel your trial at any time before it ends, and you won’t be charged.")
+  const [showSpinner, setShowSpinner] = useState(false)
 
   const { setSubscriptionType } = useContext(Context)
 
@@ -53,7 +55,10 @@ function ChoosePlan() {
   }
 
   const navigateToPurchase = () => {
-    location('/purchase')
+    setShowSpinner(true)
+    setTimeout(() => {
+      location('/purchase')
+    }, 5000);
   }
 
 
@@ -121,13 +126,12 @@ function ChoosePlan() {
                 <h4>No trial included</h4>
               </div>
             </section>
-
           </section>
 
           <div className='Plan__Container__Payment--button'>
             <div className="row">
               <div className='Plan__Container__Payment--button__container'>
-                  <button onClick={navigateToPurchase}> {premiumBtn} </button>
+                  <button onClick={navigateToPurchase}> { showSpinner ? <i id='spinner'> <PiCircleNotchBold/> </i> : premiumBtn} </button>
                 <h5> {premiumBtnDescription} </h5>
               </div>
             </div>

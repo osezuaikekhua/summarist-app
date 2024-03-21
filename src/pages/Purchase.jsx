@@ -35,9 +35,10 @@ function Payment() {
 
           <div className="Purchase__Page__LeftSide">
             <div className='Purchase__Page__Exit' onClick={exitPurchasePage}>
-              <i><IoIosArrowRoundBack /></i>
-              <span><AiOutlineShop /></span>
-              <h2>Summarist</h2>
+              <i className='trans1'><IoIosArrowRoundBack /></i>
+              <span className='trans2'><AiOutlineShop /></span>
+              <h2 className='trans3'>Summarist</h2>
+              <h2 className='trans4'>Back</h2>
             </div>
 
             <div className='Purchase__Page__Premium'>
