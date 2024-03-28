@@ -55,6 +55,19 @@ function LogIn({showSignIn, resetPass}) {
     })
   }
 
+  async function handleGuestSignIn(){
+    await signInWithEmailAndPassword(database, "Guest655249@gmail.com", "GuestAccount")
+    
+      setShowModal(false)
+      setAccountInformation("Guest655249@gmail.com")
+      setLoginState(true)
+    
+    if(window.location.pathname === '/'){
+      history('/for-you')
+    }else{
+      history(window.location.pathname)
+    }
+  }
   
 
 
@@ -64,8 +77,8 @@ function LogIn({showSignIn, resetPass}) {
             <h2>Log in to Summarist</h2>
             <h4 style={{color: '#c71111', fontWeight:'400'}}>{error}</h4>
             <br />
-            <button className='module__login__guest'> <Link to={"/for-you"}> <div className='guest-icon'><GiCharacter /></div> Login as a Guest</Link></button>            
-            {/*<button className='module__login__google'> <div className='google-icon'><FcGoogle /></div> Login with Google</button>*/}
+            <button className='module__login__guest' onClick={handleGuestSignIn}>  <div className='guest-icon'><GiCharacter /></div> Log In as a Guest</button>            
+            
               <div id='or'>
                 <div></div>
                 <h5>or</h5>
@@ -75,7 +88,7 @@ function LogIn({showSignIn, resetPass}) {
               <input type="text" placeholder='Email Address' name='email' />
               <input type="text" placeholder='Password' name='password'/>
               
-            <button className='btn' >  Login </button>
+            <button className='btn' >  Log In </button>
            </form>
         </div>
         
