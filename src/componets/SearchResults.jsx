@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom'
 function SearchResults({data}) {
   const location = useLocation()
 
+  //Reloading page if user already on a bookinfo page
   const Reload = () => {
       
       setTimeout(() => {
@@ -23,7 +24,7 @@ function SearchResults({data}) {
       {data.length ?
         data.map(item => (
           <Link to={`/book/${item.id}`}>
-            <div className='Search__Results--item' onClick={Reload}>
+            <div className='Search__Results--item' onClick={Reload} key={item.id}>
               <img src={item.imageLink} alt="" />
               <div>
                 <h3>{item.title}</h3>

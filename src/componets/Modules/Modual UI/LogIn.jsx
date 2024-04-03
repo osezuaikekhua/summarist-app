@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../../../App';
 
 import { GiCharacter } from "react-icons/gi";
-import { FcGoogle } from "react-icons/fc";
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -16,7 +15,6 @@ import { useDispatch } from 'react-redux';
 
 function LogIn({showSignIn, resetPass}) {
 
-  //const { setIsFYvisible } = useContext(Context)
   const { setShowModal } = useContext(Context)
 
   const [email, setEmail] = useState("")
@@ -33,12 +31,16 @@ function LogIn({showSignIn, resetPass}) {
 
       if(window.location.pathname === '/'){
         history('/for-you')
+
+        setTimeout(() => {
+          window.location.reload()
+        },100)
       }else{
         history(window.location.pathname)
 
         setTimeout(() => {
           window.location.reload()
-        },300)
+        },100)
       }
       
       setShowModal(false)
@@ -62,11 +64,14 @@ function LogIn({showSignIn, resetPass}) {
     
     if(window.location.pathname === '/'){
       history('/for-you')
+      setTimeout(() => {
+        window.location.reload()
+      },100)
     }else{
       history(window.location.pathname)
       setTimeout(() => {
         window.location.reload()
-      },300)
+      },100)
     }
   }
   

@@ -27,7 +27,7 @@ function BookInfo() {
 
     const loggedIn = useSelector(state => state.user.testEmail)
     
-
+    //Fetching data from API
     async function fetchBook(){
         const { data } = await axios.get(`https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`)
         setBook(data)
@@ -63,11 +63,6 @@ function BookInfo() {
             
             savedBooks.pop(element)
         }
-
-        
-        
-
-
     }
 
 

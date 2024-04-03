@@ -61,7 +61,7 @@ function ForYouPage( ) {
                   {recommendedBooks.length ?
                     recommendedBooks.slice(0,4).map(book => (
                       <Link to={`/book/${book.id}`} >
-                      <Book key={book.id}
+                      <Book id={book.id}
                             subscriptionRequire={book.subscriptionRequired}
                             imageLink={book.imageLink} 
                             title={book.title} 
@@ -96,7 +96,7 @@ function ForYouPage( ) {
                   {suggestedBooks.length ?
                     suggestedBooks.slice(0,4).map(book => (
                       <Link to={`/book/${book.id}`}  >
-                      <Book key={book.id}
+                      <Book id={book.id}
                             subscriptionRequire={book.subscriptionRequired}
                             imageLink={book.imageLink} 
                             title={book.title} 

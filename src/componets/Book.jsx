@@ -2,9 +2,9 @@ import React from 'react'
 import { CiClock2 } from "react-icons/ci";
 import { IoIosStarOutline } from "react-icons/io";
 
-function Book({key, imageLink, title, author, subTitle, averageRating, subscriptionRequire}) {
+function Book({id, imageLink, title, author, subTitle, averageRating, subscriptionRequire}) {
   return (
-    <div className="Book" key={key}>
+    <div className="Book" key={id}>
         {subscriptionRequire ? <div className='subscriptionRequired'><h1>Premium</h1></div> : " "}
         
         

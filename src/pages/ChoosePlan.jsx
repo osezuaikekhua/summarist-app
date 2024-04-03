@@ -25,6 +25,7 @@ function ChoosePlan() {
 
   const location = useNavigate()
 
+  //Toggle arrow on the question & answers section
   const toggle = (i) => {
     if (selected == i){
       return setSelected(null)
@@ -32,7 +33,7 @@ function ChoosePlan() {
     setSelected(i)
   }
 
-
+//Chaning text based on option selection
   function PaymentOption () {
     const option = document.querySelectorAll(".Plan__Container__Payment--option")
     
@@ -54,6 +55,7 @@ function ChoosePlan() {
     })
   }
 
+  //Sending user to purchase page
   const navigateToPurchase = () => {
     setShowSpinner(true)
     setTimeout(() => {
@@ -62,7 +64,7 @@ function ChoosePlan() {
   }
 
 
-
+  //Setting default selection to yearly
   useEffect(() => {
     PaymentOption ()
     setSubscriptionType("Yearly")

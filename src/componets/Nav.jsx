@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useState, useContext } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 
 import { RxMagnifyingGlass } from "react-icons/rx";
@@ -30,6 +30,8 @@ function Nav({logo}) {
   const dispatch = useDispatch()
   const user = useSelector(state => state.user.testEmail)
 
+
+  //Active class on tabs
   function Tabs () {
     const links = document.querySelectorAll(".access")
     
@@ -43,14 +45,15 @@ function Nav({logo}) {
   
   useEffect(() => {
     Tabs()
-    console.log(user)
   })
 
+  //Signing user out
   async function handleSignOut (){
     await signOut(database)
     dispatch(signOutUser())
   }
-
+  
+  //Changing Font size
   function changeFontSize16(){
     setTextSize('16px')
     setLineHeight('23px')

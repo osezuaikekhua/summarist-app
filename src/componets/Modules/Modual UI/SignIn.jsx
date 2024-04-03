@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { FcGoogle } from "react-icons/fc";
 import { Context } from '../../../App';
 
 
@@ -32,11 +31,14 @@ function SignIn({showLogIn}) {
 
       if(window.location.pathname === '/'){
         history('/for-you')
+        setTimeout(() => {
+          window.location.reload()
+        },100)
       }else{
         history(window.location.pathname)
         setTimeout(() => {
           window.location.reload()
-        },300)
+        },100)
       }
 
       setShowModal(false)
@@ -58,11 +60,14 @@ function SignIn({showLogIn}) {
     
     if(window.location.pathname === '/'){
       history('/for-you')
+      setTimeout(() => {
+        window.location.reload()
+      },100)
     }else{
       history(window.location.pathname)
       setTimeout(() => {
         window.location.reload()
-      },300)
+      },100)
     }
   }
 
