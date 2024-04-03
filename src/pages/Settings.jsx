@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import login from '../images/login.png'
 import { Context } from '../App'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 
 
 function Settings() {
+    const email = useSelector(state => state.user.testEmail)
 
-    const { accountInformation } = useContext(Context)
-    const { loginState } = useContext(Context)
     const { showModule } = useContext(Context)
     let { subscriptionStatus } = useContext(Context)
 
@@ -17,7 +17,7 @@ function Settings() {
     <div className='Settings__Container'>
         <div className="row">
             <h1>Settings</h1>
-            {loginState
+            {email
                 ?
                 <div className='Account__Information'>
                     <div className='Subscription__Plan'>
@@ -28,10 +28,10 @@ function Settings() {
                     </div>
                     <div className='Account__Email'>
                         <h3>Email</h3>
-                        <h4>{accountInformation}</h4>
+                        <h4>{email}</h4>
                     </div>
                 </div>
-                :
+                    :
                 <div className='Not__LoggedIn'>
                     <img src={login} alt="" />
                     <h2>Log in to your account to see your details</h2>

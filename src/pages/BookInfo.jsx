@@ -11,6 +11,7 @@ import { SlBookOpen } from "react-icons/sl";
 
 import Skeleton from '../componets/Skeleton';
 import { Context } from '../App';
+import { useSelector } from 'react-redux';
 
 
 function BookInfo() {
@@ -20,10 +21,11 @@ function BookInfo() {
     const [ savedStatus, setSavedStatus ] = useState("Add title to My Library")
     const [ isSaved, setIsSaved ] = useState(false)
 
-    const { loginState } = useContext(Context)
     const { showModule } = useContext(Context)
     const { subscriptionStatus } = useContext(Context)
     const { savedBooks } = useContext(Context)
+
+    const loggedIn = useSelector(state => state.user.testEmail)
     
 
     async function fetchBook(){
@@ -92,7 +94,7 @@ function BookInfo() {
                             <div> <HiOutlineLightBulb /> <h5>{`${book.keyIdeas} Key ideas`}</h5> </div>
                         </div>
                     </div>
-                    {loginState ?
+                    {loggedIn ?
                         book.subscriptionRequired ?
                             subscriptionStatus==="Premium" ?
                                 <div className='Book__Info-read'>

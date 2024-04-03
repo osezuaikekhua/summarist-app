@@ -22,6 +22,7 @@ import logo from './images/logo.png'
 import {Helmet} from "react-helmet";
 
 
+
 export const Context = createContext();
 
 
@@ -47,6 +48,7 @@ function App() {
       setShowModal(false)
     }
   }
+
 
 
   const location = useLocation()

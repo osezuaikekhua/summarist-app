@@ -1,24 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
-/*
-* Testing reload --> Add back in if I get data saving working OR Delete if I figure out how to re-render bookInfo page
+
+
+  
+
+function SearchResults({data}) {
+  const location = useLocation()
 
   const Reload = () => {
-    setTimeout(() => {
-    window.location.reload() 
-    }, "300");
-    
-  }
-*/
-function SearchResults({data}) {
+      
+      setTimeout(() => {
+        if(location.pathname.includes("book"))
+          window.location.reload() 
+      }, 100);
+      
+    }
+
   return (
     <div className='Search__Results'>
 
       {data.length ?
         data.map(item => (
           <Link to={`/book/${item.id}`}>
-            <div className='Search__Results--item'>
+            <div className='Search__Results--item' onClick={Reload}>
               <img src={item.imageLink} alt="" />
               <div>
                 <h3>{item.title}</h3>

@@ -11,20 +11,24 @@ import { GoGear, GoQuestion } from "react-icons/go";
 
 
 import { signOut } from 'firebase/auth';
-import { database } from './Modules/FireBaseConfig';
+import { database } from '../FireBaseConfig';
 
 import { Context } from '../App';
 import FontSize from './audio player/FontSize';
+import { useDispatch } from 'react-redux';
+import { signOutUser } from '../redux/userSlice';
+import { useSelector } from 'react-redux'
 
 function Nav({logo}) {
   
-  const { loginState } = useContext(Context)
-  const { setLoginState } = useContext(Context)
+
   const { showModule } = useContext(Context)
   const { setLineHeight } = useContext(Context)
   const { setTextSize } = useContext(Context)
 
   const location = useLocation()
+  const dispatch = useDispatch()
+  const user = useSelector(state => state.user.testEmail)
 
   function Tabs () {
     const links = document.querySelectorAll(".access")
@@ -39,12 +43,12 @@ function Nav({logo}) {
   
   useEffect(() => {
     Tabs()
+    console.log(user)
   })
 
-  const handleSigningOut = () => {
-    signOut(database).then(val =>{
-      setLoginState(false)
-    })
+  async function handleSignOut (){
+    await signOut(database)
+    dispatch(signOutUser())
   }
 
   function changeFontSize16(){
@@ -110,8 +114,8 @@ function Nav({logo}) {
             <div className='No-access'><div className='never-active'></div><i><GoQuestion /></i> <p>Help & Support</p></div>
 
             {
-              loginState ?
-              <div onClick={handleSigningOut} className='extra-access'><div className='never-active'></div><i><BsArrowBarRight /></i> <p>Log out</p> </div>
+              user ?
+              <div onClick={handleSignOut} className='extra-access'><div className='never-active'></div><i><BsArrowBarRight /></i> <p>Log out</p> </div>
               :
               <div onClick={showModule} className='extra-access'><div className='never-active'></div><i><BsArrowBarRight /></i> <p>Log in</p> </div>
             }

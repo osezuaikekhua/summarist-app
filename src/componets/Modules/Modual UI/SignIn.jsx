@@ -1,36 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { Context } from '../../../App';
 
 
-import { database } from '../FireBaseConfig';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { database } from '../../../FireBaseConfig';
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { GiCharacter } from 'react-icons/gi';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../../redux/userSlice';
 
 function SignIn({showLogIn}) {
 
   const { setShowModal } = useContext(Context)
-  const { setAccountInformation } = useContext(Context)
-  const { setLoginState } = useContext(Context)
 
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const[error, setError] = useState("")
+
   const history = useNavigate()
+  const dispatch = useDispatch()
+  
 
 
-
-  const handleSubmit =(e)=>{
+  const handleSubmit = e =>{
     e.preventDefault()
-    const email = e.target.email.value
-    const password = e.target.password.value
    
     createUserWithEmailAndPassword(database,email,password).then(data => {
       console.log(data,"authData")
-      history('/for-you')
+
+
+      if(window.location.pathname === '/'){
+        history('/for-you')
+      }else{
+        history(window.location.pathname)
+        setTimeout(() => {
+          window.location.reload()
+        },300)
+      }
 
       setShowModal(false)
-      setAccountInformation(email)
-      setLoginState(true)
 
     }).catch(err =>{
 
@@ -46,17 +55,33 @@ function SignIn({showLogIn}) {
     await signInWithEmailAndPassword(database, "Guest655249@gmail.com", "GuestAccount")
     
       setShowModal(false)
-      setAccountInformation("Guest655249@gmail.com")
-      setLoginState(true)
     
     if(window.location.pathname === '/'){
       history('/for-you')
     }else{
       history(window.location.pathname)
+      setTimeout(() => {
+        window.location.reload()
+      },300)
     }
   }
 
 
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(database, (currentUser) => {
+      if(!currentUser) return
+      dispatch(
+        setUser({
+        
+          email: currentUser.email,
+          uid: currentUser.uid
+        })
+      )
+    })
+
+    return unsubscribe
+
+  },[])
 
 
   return (
@@ -74,8 +99,8 @@ function SignIn({showLogIn}) {
               </div>
             
             <form onSubmit={(e)=>handleSubmit(e)}>
-              <input type="text" placeholder='Email Address' name='email' />
-              <input type="text" placeholder='Password' name='password'/>
+              <input type="text" placeholder='Email Address' name='email' onChange={e => setEmail(e.target.value)} />
+              <input type="text" placeholder='Password' name='password' onChange={e => setPassword(e.target.value)}/>
               
               <button className='btn' >  Sign up </button>
            </form>

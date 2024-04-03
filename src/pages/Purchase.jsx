@@ -5,17 +5,15 @@ import { FcGoogle } from "react-icons/fc";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { AiOutlineShop } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 function Payment() {
-
-  const { accountInformation } = useContext(Context)
-  const { loginState } = useContext(Context)
   const { setSubscriptionStatus } = useContext(Context)
   const { subscriptionType } = useContext(Context)
   
-
+  const email = useSelector(state => state.user.testEmail)
   const location = useNavigate()
 
   const subscribeToPremium = () => {
@@ -84,7 +82,7 @@ function Payment() {
 
               <div className='Purchase__Page__Email'>
                 <h2>Email</h2>
-                <h2>{loginState ? accountInformation : '🚫unable to provide email' }</h2>
+                <h2>{email ? email : '🚫unable to provide email' }</h2>
               </div>
 
               <h1>Card information</h1>
