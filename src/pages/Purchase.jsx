@@ -5,7 +5,8 @@ import { FcGoogle } from "react-icons/fc";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { AiOutlineShop } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatePremium } from '../redux/userSlice';
 
 
 
@@ -13,16 +14,21 @@ function Payment() {
   const { setSubscriptionStatus } = useContext(Context)
   const { subscriptionType } = useContext(Context)
   
-  const email = useSelector(state => state.user.testEmail)
+  const email = useSelector(state => state.user.User_Email)
   const location = useNavigate()
-
-  const subscribeToPremium = () => {
-    alert("This is a fake transaction. Enjoy your premium subscription")
-    setSubscriptionStatus("Premium")
-  }
+  const dispatch = useDispatch()
 
   const exitPurchasePage = () => {
     location('/for-you')
+  }
+
+  function subscribeToPremium (){
+    alert("This is a fake transaction. Enjoy your premium subscription")
+    dispatch(
+      updatePremium({
+        newPremium: true
+      })
+    )
   }
   
   return (

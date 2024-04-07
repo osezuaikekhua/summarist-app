@@ -3,11 +3,11 @@ import { Context } from '../../../App';
 
 import { GiCharacter } from "react-icons/gi";
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { database } from '../../../FireBaseConfig';
+import { auth } from '../../../FireBaseConfig';
 import { onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
-import { setUser } from '../../../redux/userSlice';
+import { setPremium, setUser } from '../../../redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 
@@ -27,7 +27,7 @@ function LogIn({showSignIn, resetPass}) {
   const handleSubmit = e => {
     e.preventDefault()
     
-    signInWithEmailAndPassword(database,email,password).then(data => { 
+    signInWithEmailAndPassword(auth,email,password).then(data => { 
 
       if(window.location.pathname === '/'){
         history('/for-you')
@@ -58,7 +58,7 @@ function LogIn({showSignIn, resetPass}) {
   }
 
   async function handleGuestSignIn(){
-    await signInWithEmailAndPassword(database, "Guest655249@gmail.com", "GuestAccount")
+    await signInWithEmailAndPassword(auth, "Guest655249@gmail.com", "GuestAccount")
     
       setShowModal(false)
     
@@ -76,7 +76,7 @@ function LogIn({showSignIn, resetPass}) {
   }
   
   useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(database, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if(!currentUser) return
       dispatch(setUser(
         {
@@ -84,6 +84,12 @@ function LogIn({showSignIn, resetPass}) {
           uid: currentUser.uid
         }
       ))
+
+      dispatch(
+        setPremium({
+          setPremium: false
+        })
+      )
     })
 
     return unsubscribe

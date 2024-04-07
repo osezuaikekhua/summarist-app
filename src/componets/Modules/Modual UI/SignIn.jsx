@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../../../App';
 
 
-import { database } from '../../../FireBaseConfig';
+import { auth, db } from '../../../FireBaseConfig';
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { GiCharacter } from 'react-icons/gi';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../../redux/userSlice';
+import { setPremium, setUser } from '../../../redux/userSlice';
+import { addDoc, collection } from 'firebase/firestore';
+
 
 function SignIn({showLogIn}) {
 
@@ -15,20 +17,20 @@ function SignIn({showLogIn}) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const[error, setError] = useState("")
+  const [error, setError] = useState("")
 
   const history = useNavigate()
   const dispatch = useDispatch()
-  
 
 
   const handleSubmit = e =>{
     e.preventDefault()
-   
-    createUserWithEmailAndPassword(database,email,password).then(data => {
+    //setUpPremium()
+
+    createUserWithEmailAndPassword(auth,email,password).then(data => {
       console.log(data,"authData")
-
-
+      
+      //Sending user to For you page or current page
       if(window.location.pathname === '/'){
         history('/for-you')
         setTimeout(() => {
@@ -41,6 +43,7 @@ function SignIn({showLogIn}) {
         },100)
       }
 
+      //Closing Modal
       setShowModal(false)
 
     }).catch(err =>{
@@ -53,8 +56,9 @@ function SignIn({showLogIn}) {
     })
   }
 
+  //Signing up as Guest
   async function handleGuestSignIn(){
-    await signInWithEmailAndPassword(database, "Guest655249@gmail.com", "GuestAccount")
+    await signInWithEmailAndPassword(auth, "Guest655249@gmail.com", "GuestAccount")
     
       setShowModal(false)
     
@@ -72,16 +76,33 @@ function SignIn({showLogIn}) {
   }
 
 
+
+
+
   useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(database, (currentUser) => {
+    //Sending User's information to redux
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if(!currentUser) return
       dispatch(
         setUser({
-        
           email: currentUser.email,
           uid: currentUser.uid
         })
       )
+      //Creating collection to send to firebase (Default prem state is set to false)
+      const info = {
+        email: currentUser.email,
+        uid: currentUser.uid,
+        premium: false 
+      }
+      addDoc(collection(db, "PremiumStatus"),info)
+
+      dispatch(
+        setPremium({
+          setPremium: false
+        })
+      )
+
     })
 
     return unsubscribe
@@ -109,7 +130,7 @@ function SignIn({showLogIn}) {
               
               <button className='btn' >  Sign up </button>
            </form>
-
+          <button>add to Doc</button>
           </div>
           <br />
           <div className='signUp__link' onClick={showLogIn}>Already have an account</div>

@@ -11,7 +11,7 @@ import { GoGear, GoQuestion } from "react-icons/go";
 
 
 import { signOut } from 'firebase/auth';
-import { database } from '../FireBaseConfig';
+import { auth } from '../FireBaseConfig';
 
 import { Context } from '../App';
 import FontSize from './audio player/FontSize';
@@ -28,7 +28,7 @@ function Nav({logo}) {
 
   const location = useLocation()
   const dispatch = useDispatch()
-  const user = useSelector(state => state.user.testEmail)
+  const user = useSelector(state => state.user.User_Email)
 
 
   //Active class on tabs
@@ -49,9 +49,10 @@ function Nav({logo}) {
 
   //Signing user out
   async function handleSignOut (){
-    await signOut(database)
+    await signOut(auth)
     dispatch(signOutUser())
   }
+
   
   //Changing Font size
   function changeFontSize16(){

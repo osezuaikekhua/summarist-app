@@ -11,7 +11,7 @@ import { SlBookOpen } from "react-icons/sl";
 
 import Skeleton from '../componets/Skeleton';
 import { Context } from '../App';
-import { useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 
 
 function BookInfo() {
@@ -22,10 +22,10 @@ function BookInfo() {
     const [ isSaved, setIsSaved ] = useState(false)
 
     const { showModule } = useContext(Context)
-    const { subscriptionStatus } = useContext(Context)
     const { savedBooks } = useContext(Context)
 
-    const loggedIn = useSelector(state => state.user.testEmail)
+    const loggedIn = useSelector(state => state.user.User_Email)
+    const premiumState = useSelector(state => state.user.User_Premium)
     
     //Fetching data from API
     async function fetchBook(){
@@ -76,7 +76,6 @@ function BookInfo() {
                         <h1>{book.title}</h1>
                         {book.subscriptionRequired ? <h4 className='Book__Info-subscription'>(Premium)</h4> : " "}
                     </div>
-                    
                     <h4 className='Book__Info-author'>{book.author}</h4>
                     <h2 className='Book__Info-subTitle'>{book.subTitle}</h2>
                     <div className='Book__Info-group'>
@@ -91,7 +90,7 @@ function BookInfo() {
                     </div>
                     {loggedIn ?
                         book.subscriptionRequired ?
-                            subscriptionStatus==="Premium" ?
+                            !premiumState  ?
                                 <div className='Book__Info-read'>
                                     <Link to={`/player/${book.id}`}>
                                         <button>

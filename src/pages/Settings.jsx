@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import login from '../images/login.png'
 import { Context } from '../App'
 import { Link } from 'react-router-dom'
@@ -7,10 +7,10 @@ import { useSelector } from 'react-redux'
 
 
 function Settings() {
-    const email = useSelector(state => state.user.testEmail)
+    const email = useSelector(state => state.user.User_Email)
+    const premiumState = useSelector(state => state.user.User_Premium)
 
     const { showModule } = useContext(Context)
-    let { subscriptionStatus } = useContext(Context)
 
   return (
 
@@ -22,13 +22,14 @@ function Settings() {
                 <div className='Account__Information'>
                     <div className='Subscription__Plan'>
                         <h3>You Subscription Plan</h3>
-                        <h4>{subscriptionStatus}</h4>
-                        {subscriptionStatus==="Premium" ? " " : <Link to={"/choose-plan"}><button>Upgrade to Premium</button></Link>}
+                        <h4>{premiumState  ?   "Basic" : "Premium"}</h4>
+                        {premiumState  ?  <Link to={"/choose-plan"}><button>Upgrade to Premium</button></Link> : " " }
                         
                     </div>
                     <div className='Account__Email'>
                         <h3>Email</h3>
                         <h4>{email}</h4>
+                       
                     </div>
                 </div>
                     :
