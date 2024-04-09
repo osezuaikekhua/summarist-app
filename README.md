@@ -1,7 +1,8 @@
 # Welcome to Summarist App!
 
-Summarist is fully responsive an E-Book website. You can read a variety of books or listen to the e-books. 
-Purchase premium to gain more access to books. I created this website for the Frontend Simplified internship. 
+Summarist is fully responsive an E-Book website. You can read a wide selection of books or listen to a reading 
+of the book on an audio player! Search for books and authors you're interested in. After finding a book, save it
+to your library. Purchase premium to gain more access to books. 
 
 ## ⚙️Functionalities:
 
