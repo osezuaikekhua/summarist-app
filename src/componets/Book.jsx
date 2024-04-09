@@ -1,5 +1,4 @@
 import React from 'react'
-import { CiClock2 } from "react-icons/ci";
 import { IoIosStarOutline } from "react-icons/io";
 
 function Book({id, imageLink, title, author, subTitle, averageRating, subscriptionRequire}) {
@@ -13,7 +12,6 @@ function Book({id, imageLink, title, author, subTitle, averageRating, subscripti
         <div className="Book__authorName">{author}</div>
         <div className="Book__Description">{subTitle}</div>
         <footer>
-            <div className="Book__Length"> <CiClock2 /> 03:24</div>
             <div className="Book__Rating"> <IoIosStarOutline /> {averageRating}</div>
         </footer>
     </div>    

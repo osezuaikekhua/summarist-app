@@ -111,7 +111,7 @@ function LogIn({showSignIn, resetPass}) {
               </div>
             <form onSubmit={(e)=>handleSubmit(e)}>
               <input type="text" placeholder='Email Address' name='email' onChange={e => setEmail(e.target.value)} />
-              <input type="text" placeholder='Password' name='password' onChange={e => setPassword(e.target.value)}/>
+              <input type="password" placeholder='Password' name='password' onChange={e => setPassword(e.target.value)}/>
               
             <button className='btn' >  Log In </button>
            </form>

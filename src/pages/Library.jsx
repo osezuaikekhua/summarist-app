@@ -30,7 +30,7 @@ function Library() {
                 <h2>Saved Books</h2>
                 <p>{`${savedBooks.length} items`}</p>
                 {savedBooks.length ?
-                  <div className="Books__Section__Container">
+                  <div className="Books__Section__Container" id='scroll'>
                   {
                     savedBooks.map(book => (
                       <Link to={`/book/${book.id}`} >

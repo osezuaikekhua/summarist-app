@@ -126,11 +126,10 @@ function SignIn({showLogIn}) {
             
             <form onSubmit={(e)=>handleSubmit(e)}>
               <input type="text" placeholder='Email Address' name='email' onChange={e => setEmail(e.target.value)} />
-              <input type="text" placeholder='Password' name='password' onChange={e => setPassword(e.target.value)}/>
+              <input type="password" placeholder='Password' name='password' onChange={e => setPassword(e.target.value)}/>
               
               <button className='btn' >  Sign up </button>
            </form>
-          <button>add to Doc</button>
           </div>
           <br />
           <div className='signUp__link' onClick={showLogIn}>Already have an account</div>

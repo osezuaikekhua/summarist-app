@@ -74,12 +74,12 @@ function ForYouPage( ) {
                   :    
                   Array(4).fill(0).map(() => (
                     <div className="Book">
-                      <Skeleton width = {"150px"} height = {"175px"} marginBottom = {"15px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"15px"}/>
-                      <Skeleton width = {"75px"}  height = {"15px"}  marginBottom = {"15px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
+                      <Skeleton width = {"150px"} height = {"175px"} marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"75px"}  height = {"15px"}  marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
                   </div>    
                   ))
                 
@@ -108,12 +108,12 @@ function ForYouPage( ) {
                   )) :
                   Array(4).fill(0).map(() => (
                     <div className="Book">
-                      <Skeleton width = {"150px"} height = {"175px"} marginBottom = {"15px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"15px"}/>
-                      <Skeleton width = {"75px"}  height = {"15px"}  marginBottom = {"15px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
-                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"}/>
+                      <Skeleton width = {"150px"} height = {"175px"} marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"75px"}  height = {"15px"}  marginBottom = {"15px"}borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
+                      <Skeleton width = {"150px"} height = {"15px"}  marginBottom = {"5px"} borderRadius={"5px"}/>
                   </div>    
                   ))
                 }

@@ -33,14 +33,39 @@ function Nav({logo}) {
 
   //Active class on tabs
   function Tabs () {
-    const links = document.querySelectorAll(".access")
+
+    if(location.pathname.includes("for-you")){
+      document.querySelector(".ForYou__active").classList.add('active')
+
+      document.querySelector(".Library__active").classList.remove('active')
+      document.querySelector(".Settings__active").classList.remove('active')
+    }else if(location.pathname.includes("library")){
+      document.querySelector(".Library__active").classList.add('active')
+
+      document.querySelector(".ForYou__active").classList.remove('active')
+      document.querySelector(".Settings__active").classList.remove('active')
+    }else if(location.pathname.includes("settings")){
+      document.querySelector(".Settings__active").classList.add('active')
+
+      document.querySelector(".ForYou__active").classList.remove('active')
+      document.querySelector(".Library__active").classList.remove('active')
+    }else{
+      document.querySelector(".ForYou__active").classList.remove('active')
+      document.querySelector(".Library__active").classList.remove('active')
+      document.querySelector(".Settings__active").classList.remove('active')
+    }
+
+
+    // const links = document.querySelectorAll(".access")
     
-    links.forEach( tab =>{
-      tab.addEventListener('click', () => {
-        document.querySelector('.active')?.classList.remove('active')
-        tab.classList.add('active')
-      })
-    })
+    // links.forEach( tab =>{
+    //   tab.addEventListener('click', () => {
+    //     document.querySelector('.active')?.classList.remove('active')
+    //     tab.classList.add('active')
+    //   })
+    // })
+
+
   }
   
   useEffect(() => {
@@ -84,7 +109,7 @@ function Nav({logo}) {
         <div className='nav__section__text'>
 
             <Link to={"/for-you"}>
-              <div className='access active'>
+              <div className='access ForYou__active'>
                 <div className='inactive'></div>
                 <i><AiOutlineHome /></i> 
                 <p>For You</p>
@@ -92,7 +117,7 @@ function Nav({logo}) {
             </Link>
 
             <Link to={"/library"} >
-              <div className='access'>
+              <div className='access Library__active'>
                 <div className='inactive'></div>
                 <i><IoBookmarkOutline /></i> 
                 <p>My Library</p>
@@ -108,7 +133,7 @@ function Nav({logo}) {
         </div>
         <div className='nav__section__text'>
             <Link to={"/settings"}>
-              <div className='access'>
+              <div className='access Settings__active'>
                 <div className='inactive'></div>
                 <i><GoGear /></i>
                 <p>Settings</p>
