@@ -1,7 +1,7 @@
 # Welcome to Summarist App!
 
-Summarist is an E-Book website. You can read a variety of books or listen to the e-books. 
-I created this website for the Frontend Simplified internship. 
+Summarist is fully responsive an E-Book website. You can read a variety of books or listen to the e-books. 
+Purchase premium to gain more access to books. I created this website for the Frontend Simplified internship. 
 
 ## ⚙️Functionalities:
 
@@ -20,9 +20,10 @@ I created this website for the Frontend Simplified internship.
 ## 🌐Technologies Used:
 1. React JS 
 2. FireBase (firestore + authentication)
-3. Html 
-4. Css
-5. React Icons
+3. Redux
+4. Html 
+5. Css
+6. React Icons
 
   <h3><b>Note</b></h3>
 The original file was corruptted so in order to see past commits up to
