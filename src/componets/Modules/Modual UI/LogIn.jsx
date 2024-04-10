@@ -116,8 +116,8 @@ function LogIn({showSignIn, resetPass}) {
             <button className='btn' >  Log In </button>
            </form>
         </div>
-        
-          <div className='forget__password' onClick={resetPass}>Forgot your password?</div>
+        <br />
+    
           <div className='signUp__link' onClick={showSignIn}>Don't have an account</div>
     </>
   )
