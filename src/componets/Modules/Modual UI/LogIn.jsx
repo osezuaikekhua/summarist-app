@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { auth } from '../../../FireBaseConfig';
 import { onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
-import { setPremium, setUser } from '../../../redux/userSlice';
+import { setPremium } from '../../../redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 
@@ -31,26 +31,17 @@ function LogIn({showSignIn, resetPass}) {
 
       if(window.location.pathname === '/'){
         history('/for-you')
-
-        setTimeout(() => {
-          window.location.reload()
-        },100)
       }else{
         history(window.location.pathname)
-
-        setTimeout(() => {
-          window.location.reload()
-        },100)
       }
       
       setShowModal(false)
-      
       console.log(data,"authData") 
+
     }).catch(err =>{
 
       setError(`Error: ${err.code}`)
       setTimeout(() => {  
-
         setError(" ")
       }, 2000);
       
@@ -64,26 +55,17 @@ function LogIn({showSignIn, resetPass}) {
     
     if(window.location.pathname === '/'){
       history('/for-you')
-      setTimeout(() => {
-        window.location.reload()
-      },100)
+      
     }else{
       history(window.location.pathname)
-      setTimeout(() => {
-        window.location.reload()
-      },100)
+      
     }
   }
   
+  //Giving user premium
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if(!currentUser) return
-      dispatch(setUser(
-        {
-          email: currentUser.email,
-          uid: currentUser.uid
-        }
-      ))
 
       dispatch(
         setPremium({
@@ -117,8 +99,8 @@ function LogIn({showSignIn, resetPass}) {
            </form>
         </div>
         <br />
-    
-          <div className='signUp__link' onClick={showSignIn}>Don't have an account</div>
+          <div className='forget__password' onClick={resetPass}>Forgot password?</div>
+          <div className='signUp__link' onClick={showSignIn}>Don't have an account</div>          
     </>
   )
 }

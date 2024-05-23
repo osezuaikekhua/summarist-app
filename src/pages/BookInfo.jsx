@@ -3,8 +3,8 @@ import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 
 import { CiStar } from "react-icons/ci";
-import { IoBookmark, IoMicOutline } from "react-icons/io5";
-import { BsClock } from "react-icons/bs";
+import { IoMicOutline } from "react-icons/io5";
+
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { HiOutlineMicrophone } from "react-icons/hi2";
 import { SlBookOpen } from "react-icons/sl";
@@ -20,13 +20,10 @@ function BookInfo() {
     const { id } = useParams()
     const [book, setBook] = useState({})
 
-    const [savedStatus, setSavedStatus] = useState("Add title to My Library")
-    const [isSaved, setIsSaved] = useState(false)
-
     const { showModule } = useContext(Context)
     const { savedBooks } = useContext(Context)
 
-    const loggedIn = useSelector(state => state.user.User_Email)
+    const loggedIn = useSelector(state => state.user.email)
     const premiumState = useSelector(state => state.user.User_Premium)
 
     //Fetching data from API
@@ -73,12 +70,52 @@ function BookInfo() {
     
       }, [])
         
-
-
+    let bookDescriptions1 = [
+        "Captivating",
+        "Insightful",
+        "Intriguing",
+        "Heartwarming",
+        "Thought-Provoking",
+        "Engaging",
+        "Riveting",
+        "Compelling",
+        "Masterful",
+        "Lyrical",
+        "Poignant",
+        "Gripping",
+        "Enchanting",
+        "Vivid",
+        "Mesmerizing",
+        "Inspirational",
+        "Immersive",
+        "Suspenseful",
+        "Evocative"
+    ];
+    let tag1 = Math.floor(Math.random() * bookDescriptions1.length)
+    let bookDescriptions2 = [
+        "Captivating",
+        "Thought-Provoking",
+        "Intriguing",
+        "Gripping",
+        "Inspirational",
+        "Riveting",
+        "Engaging",
+        "Enlightening",
+        "Moving",
+        "Compelling",
+        "Unputdownable",
+        "Masterful",
+        "Evocative",
+        "Immersive",
+        "Poignant",
+        "Richly Detailed",
+        "Beautifully Written"
+      ];
+    let tag2 = Math.floor(Math.random() * bookDescriptions2.length)
 
     return (
         <>
-            {!book.length ?
+            {book ?
                 <div className="Book__Info__Page">
                     <div className='Book__Info__Page--row'>
                         <div className="Book__Info">
@@ -159,29 +196,32 @@ function BookInfo() {
                                         </button>
                                     </div>
                                 }
-                                <div className='Book__Info-library'>
-                                    <div className="Book__Info-library--btn unsaved" onClick={SavedBooks}>
-                                        <i><ImBooks style={{ fontSize: 27 }} /></i>
-                                        <h2 >Save</h2>
-                                    </div>
-                                    <div className="Book__Info-library--btn saved" onClick={deleteBook}>
-                                        <i><FaTrash style={{ fontSize: 27, color: "#870000" }} /> </i>
-                                        <h2 style={{ color: "#870000" }}>Delete</h2>
-                                    </div> 
-                                </div>
+                                
                                 
                                 
                                 <header>What's it about?</header>
 
                                 <div className="Book__Info-tags">
-                                    <button>Biography</button>
-                                    <button>Personal Developement</button>
+                                    
+                                    <button>{bookDescriptions1[tag1]}</button>
+                                    <button>{bookDescriptions2[tag2]}</button>
                                 </div>
 
                                 <h3>{book.bookDescription}</h3>
 
                                 <header>About the author</header>
                                 <h3>{book.authorDescription}</h3>
+
+                                <div className='Book__Info-library'>
+                                    <div className="Book__Info-library--btn unsaved" onClick={SavedBooks}>
+                                        <i><ImBooks style={{ fontSize: 25 }} /></i>
+                                        <div>Save</div>
+                                    </div>
+                                    <div className="Book__Info-library--btn saved" onClick={deleteBook}>
+                                        <i><FaTrash style={{ fontSize: 20 }} /> </i>
+                                        <div>Delete</div>
+                                    </div> 
+                                </div>
                             </div>
                         </div>
                         <div className="Book__Image"><img src={book.imageLink} alt="" /></div>

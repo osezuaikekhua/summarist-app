@@ -11,10 +11,9 @@ import { updatePremium } from '../redux/userSlice';
 
 
 function Payment() {
-  const { setSubscriptionStatus } = useContext(Context)
   const { subscriptionType } = useContext(Context)
   
-  const email = useSelector(state => state.user.User_Email)
+  const email = useSelector(state => state.user.email)
   const location = useNavigate()
   const dispatch = useDispatch()
 

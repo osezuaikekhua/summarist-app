@@ -15,11 +15,17 @@ import Modual from './componets/Modules/Modual';
 import BookSummary from './pages/BookSummary';
 import ChoosePlan from './pages/ChoosePlan';
 import Purchase from './pages/Purchase';
+import ErrorPage from './pages/Error';
 
 import logo from './images/logo.png'
 
 
 import {Helmet} from "react-helmet";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './FireBaseConfig';
+import { useDispatch } from 'react-redux';
+import { setUser } from './redux/userSlice';
+
 
 
 
@@ -30,10 +36,7 @@ function App() {
 
 
   //Global Variables
-  const[loginState, setLoginState] = useState(false)
-  const[accountInformation, setAccountInformation] = useState(" ")
   const[showModal, setShowModal] = useState(false)
-  const[subscriptionStatus, setSubscriptionStatus] = useState("Basic")
   const[subscriptionType, setSubscriptionType] = useState("Yearly")
   const[savedBooks, setSavedBooks] = useState([])
   
@@ -49,13 +52,28 @@ function App() {
     }
   }
 
+  //Making sure user stays logged in
+  let dispatch = useDispatch()
+
+  React.useState(() => {
+    onAuthStateChanged(auth, (user) => {
+      if( user ){
+        dispatch(setUser(
+          {
+            email: user.email,
+            uid: user.uid
+          }
+        ))
+      }
+    })
+  })
 
 
   const location = useLocation()
               
   return (
     <>
-      <Context.Provider value={{setShowModal, showModule, setAccountInformation, accountInformation, loginState, setLoginState, textSize, setTextSize, lineHeight, setLineHeight, subscriptionStatus, setSubscriptionStatus, subscriptionType, setSubscriptionType, savedBooks, setSavedBooks}}>
+      <Context.Provider value={{setShowModal, showModule, textSize, setTextSize, lineHeight, setLineHeight, subscriptionType, setSubscriptionType, savedBooks, setSavedBooks}}>
 
         { showModal && <Modual /> } 
 
@@ -88,6 +106,7 @@ function App() {
                   <Route path='/book/:id' element={<BookInfo/>}/>
                   <Route path='/settings' element={<Settings />} />
                   <Route path='/player/:id' element={<BookSummary {...{textSize, lineHeight}} />} />
+                  <Route path='*' element={ <ErrorPage/> }/>
                 </Routes>
               </div>
             </section>

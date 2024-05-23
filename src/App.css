@@ -610,7 +610,6 @@ button:disabled {
   width: 100%;
   text-align: center;
   padding: 15px;
-  margin-top: 25px;
   border-radius: 0 0 10px 10px;
   color: #0564f1;
   font-size: 15px;
@@ -1128,21 +1127,29 @@ button:disabled {
   display: flex;
   align-items: center;
   color: #0a527c;
-  margin: 40px 0 40px 20px;
+  margin: 40px 0 40px 0;
 
 }
 
 .Book__Info-library--btn{
-  cursor: pointer;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-right: 15px;
-  transition: .5s;
+
+  background-color: #052e45;
+  font-size: 17px;
+  color: white;
+  padding: 7px 30px;
+  margin-right: 20px;
+  border-radius: 4px;
+  height: 45px;
+
+  transition: .3s;
+  cursor: pointer;
 }
 
 .Book__Info-library--btn:hover{
-  transform: scale(.8);
+  transform: scale(.9);
 }
 
 .Book__Info-library h2{
@@ -1885,6 +1892,30 @@ button:disabled {
 .Purchase__Page__Footer span{
   color: red;
   font-weight: 400;
+}
+
+/* ERROR PAGE*/
+.Error__Page{
+  width: 100%;
+  height: 91vh;
+  background-color: black;
+  position: relative;
+}
+
+.Error__Page div{
+  color: white;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Error__Page h2{
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 15px;
 }
 
 

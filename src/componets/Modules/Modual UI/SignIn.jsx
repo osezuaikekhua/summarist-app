@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../../../App';
 
 
-import { auth, db } from '../../../FireBaseConfig';
+import { auth } from '../../../FireBaseConfig';
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { GiCharacter } from 'react-icons/gi';
 import { useDispatch } from 'react-redux';
-import { setPremium, setUser } from '../../../redux/userSlice';
-import { addDoc, collection } from 'firebase/firestore';
+import { setPremium } from '../../../redux/userSlice';
+
 
 
 function SignIn({showLogIn}) {
@@ -25,7 +25,6 @@ function SignIn({showLogIn}) {
 
   const handleSubmit = e =>{
     e.preventDefault()
-    //setUpPremium()
 
     createUserWithEmailAndPassword(auth,email,password).then(data => {
       console.log(data,"authData")
@@ -33,14 +32,10 @@ function SignIn({showLogIn}) {
       //Sending user to For you page or current page
       if(window.location.pathname === '/'){
         history('/for-you')
-        setTimeout(() => {
-          window.location.reload()
-        },100)
+        
       }else{
         history(window.location.pathname)
-        setTimeout(() => {
-          window.location.reload()
-        },100)
+        
       }
 
       //Closing Modal
@@ -64,14 +59,10 @@ function SignIn({showLogIn}) {
     
     if(window.location.pathname === '/'){
       history('/for-you')
-      setTimeout(() => {
-        window.location.reload()
-      },100)
+      
     }else{
       history(window.location.pathname)
-      setTimeout(() => {
-        window.location.reload()
-      },100)
+      
     }
   }
 
@@ -80,23 +71,10 @@ function SignIn({showLogIn}) {
 
 
   useEffect(()=>{
-    //Sending User's information to redux
+    //Setting up and giving user Premium state which by default is false
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if(!currentUser) return
-      dispatch(
-        setUser({
-          email: currentUser.email,
-          uid: currentUser.uid
-        })
-      )
-      //Creating collection to send to firebase (Default prem state is set to false)
-      const info = {
-        email: currentUser.email,
-        uid: currentUser.uid,
-        premium: false 
-      }
-      addDoc(collection(db, "PremiumStatus"),info)
-
+      
       dispatch(
         setPremium({
           setPremium: false

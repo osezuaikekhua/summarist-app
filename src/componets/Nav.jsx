@@ -28,7 +28,7 @@ function Nav({logo}) {
 
   const location = useLocation()
   const dispatch = useDispatch()
-  const user = useSelector(state => state.user.User_Email)
+  const user = useSelector(state => state.user.email)
 
 
   //Active class on tabs

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 
 
 function Settings() {
-    const email = useSelector(state => state.user.User_Email)
+    const email = useSelector(state => state.user.email)
     const premiumState = useSelector(state => state.user.User_Premium)
 
     const { showModule } = useContext(Context)

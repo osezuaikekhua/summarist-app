@@ -6,7 +6,7 @@ import ResetPassword from './Modual UI/ResetPassword';
 import { Context } from '../../App';
 
 import { MdClose } from "react-icons/md";
-import { Link } from 'react-router-dom';
+
 
 
 
