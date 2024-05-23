@@ -4,6 +4,8 @@ Summarist is fully responsive an E-Book website. You can read a wide selection o
 of the book on an audio player! Search for books and authors you're interested in. After finding a book, save it
 to your library. Purchase premium to gain more access to books. 
 
+website 👉 ( https://summarist-app-lilac.vercel.app/ )
+
 ## ⚙️Functionalities:
 
 
