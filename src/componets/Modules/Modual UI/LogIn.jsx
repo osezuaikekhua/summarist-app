@@ -31,8 +31,14 @@ function LogIn({showSignIn, resetPass}) {
 
       if(window.location.pathname === '/'){
         history('/for-you')
+        setTimeout(() => {
+          window.location.reload()
+        },100)
       }else{
         history(window.location.pathname)
+        setTimeout(() => {
+          window.location.reload()
+        },100)
       }
       
       setShowModal(false)
@@ -55,10 +61,14 @@ function LogIn({showSignIn, resetPass}) {
     
     if(window.location.pathname === '/'){
       history('/for-you')
-      
+      setTimeout(() => {
+        window.location.reload()
+      },100)
     }else{
       history(window.location.pathname)
-      
+      setTimeout(() => {
+        window.location.reload()
+      },100)
     }
   }
   
