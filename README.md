@@ -33,7 +33,7 @@
 
 ## 👤 About the Developer
 Osezua Ikekhua
-💼 Full-Stack Engineer | Frontend Specialist
-🌐 [GitHub](https://github.com/osezuaikekhua)
-🔗 [Portfolio](https://osezua-ikekhua.vercel.app/)
-💬 Open to freelance, contract, and startup opportunities
+- 💼 Full-Stack Engineer | Frontend Specialist
+- 🌐 [GitHub](https://github.com/osezuaikekhua)
+- 🔗 [Portfolio](https://osezua-ikekhua.vercel.app/)
+- 💬 Open to freelance, contract, and startup opportunities
