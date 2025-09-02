@@ -1,35 +1,39 @@
-# Welcome to Summarist App!
+# 📚 Summarist App
 
-Summarist is fully responsive an E-Book website. You can read a wide selection of books or listen to a reading 
-of the book on an audio player! Search for books and authors you're interested in. After finding a book, save it
-to your library. Purchase premium to gain more access to books. 
+**Live Demo** 👉 [https://summarist-app-lilac.vercel.app/](https://summarist-app-lilac.vercel.app/)
 
-website 👉 ( https://summarist-app-lilac.vercel.app/ )
+**Summarist** is a fully responsive and dynamic E-Book platform that allows users to read or listen to book summaries, manage personal libraries, and unlock premium content through a seamless subscription model. Designed with performance, scalability, and user experience in mind, Summarist provides a rich digital reading experience accessible across all devices.
 
-## ⚙️Functionalities:
+---
 
+## ✨ Features
 
- - User authentication
- - Read or listen to E-Books
- - Purchase Premium to gain access to more books
- - Search for books
- - Save your Favorite books
- - Responsive website
- - And other small little details....
-  
-  
-  
+- 🔐 **User Authentication** (Firebase Auth)
+- 📚 **Read or Listen to E-Books** with integrated audio player
+- 💎 **Premium Access** for extended content
+- 🔍 **Search Books & Authors** dynamically
+- ❤️ **Save Favorite Books** to a personal library
+- 📱 **Fully Responsive UI** (mobile/tablet/desktop)
+- ⚡ **Optimized Performance** using lazy loading, Redux, and efficient routing
 
-## 🌐Technologies Used:
-1. React JS 
-2. FireBase (firestore + authentication)
-3. Redux
-4. Html 
-5. Css
-6. React Icons
+---
 
-  <h3><b>Note</b></h3>
-The original file was corruptted so in order to see past commits up to
-the oldest commit in this repository, 
-<br>
-go here 👉 (https://github.com/osezuaikekhua/advanced-internship/commits/master/)
+## ⚙️ Tech Stack
+
+| Tech / Tool         | Role in Project                          |
+|---------------------|-------------------------------------------|
+| **React.js**         | Core frontend framework                  |
+| **Firebase**         | Auth + Firestore DB                      |
+| **Redux**            | State management                        |
+| **HTML5 / CSS3**     | Markup & styling                        |
+| **React Icons**      | UI enhancement                          |
+| **Vercel**           | Hosting and deployment                   |
+
+---
+
+## 👤 About the Developer
+Osezua Ikekhua
+💼 Full-Stack Engineer | Frontend Specialist
+🌐 [GitHub](https://github.com/osezuaikekhua)
+🔗 [Portfolio](https://osezua-ikekhua.vercel.app/)
+💬 Open to freelance, contract, and startup opportunities
